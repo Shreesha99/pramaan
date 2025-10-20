@@ -105,10 +105,9 @@ nav.navbar {
   animation: scroll 2s infinite;
 }
 
-#contents h1 {
-  color: black;
-  font-size: 40vw;
-  text-transform: uppercase;
+#contents img {
+  width: 33.33vw;
+  height: 33vh;
 }
 
 .container {

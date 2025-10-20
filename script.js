@@ -103,14 +103,17 @@ navTl1.to(
   "-=0.5"
 );
 
-gsap.to("#contents h1", {
-  transform: "translateX(-150%)",
+gsap.to("#contents", {
+  xPercent: -150, // move left by 150% of width
+  ease: "none",
   scrollTrigger: {
     trigger: "#contents",
     scroller: "body",
-    start: "top 0%",
+    start: "top top",
+    end: () => "+=" + document.querySelector("#contents").scrollWidth,
     scrub: 2,
     pin: true,
+    anticipatePin: 1,
   },
 });
 
