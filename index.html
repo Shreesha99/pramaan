@@ -20,169 +20,258 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <div class="d-flex flex-column vh-100 mb-5">
-      <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-            <img src="/assets/img/nav-logo.png" alt="PraMaan logo" />
-          </a>
+    <nav
+      class="navbar navbar-expand-lg sticky-top bg-transparent transition-bg"
+      id="mainNavbar"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="/assets/img/nav-logo.png" alt="PraMaan logo" />
+        </a>
 
-          <button
-            class="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-            aria-controls="navbarContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="ri-menu-line fs-3"></i>
-          </button>
-
-          <div
-            class="collapse navbar-collapse justify-content-between"
-            id="navbarContent"
-          >
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex gap-4 border-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">On Sale</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">New Arrivals</a>
-              </li>
-            </ul>
-
-            <div class="navbar-icons d-flex align-items-center gap-5">
-              <i class="ri-search-line"></i>
-              <i class="ri-shopping-cart-line"></i>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <section
-        class="d-flex flex-column justify-content-start align-items-center flex-grow-1 text-center position-relative"
-        id="hero"
-      >
-        <img
-          src="/assets/img/modelpng.png"
-          class="d-none d-lg-block position-absolute top-50 start-50 translate-middle w-50 hero-img z-2"
-          alt="Model"
-        />
-        <div class="p-4 position-relative d-none d-lg-block mt-4 hero-main">
-          <h1
-            class="display-1 fw-bold text-uppercase stretched hero-text d-flex justify-content-between"
-          >
-            <p>Discover</p>
-            clothes
-          </h1>
-          <h1
-            class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
-          >
-            Unique
-            <p class="mb-0 ms-auto me-5">style</p>
-          </h1>
-          <h1
-            class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
-          >
-            <p class="mb-0 ms-auto me-5">drip</p>
-          </h1>
-          <h1
-            class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
-          >
-            <p class="mb-0 ms-auto me-5">range</p>
-          </h1>
-          <h1
-            class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
-          >
-            <p class="mb-0 ms-auto me-1">designs</p>
-          </h1>
-          <h1
-            class="display-1 fw-bold text-uppercase stretched d-flex align-items-center"
-          >
-            <span id="counter" class="mb-0 ms-0">0</span>
-            <span id="counter" class="mb-0 ms-auto me-1">choices</span>
-          </h1>
-        </div>
-
-        <div class="d-block d-lg-none p-4">
-          <h1 class="display-4 fw-bold text-uppercase hero-text mb-2">
-            <p>Discover</p>
-            clothes
-          </h1>
-          <h1 class="display-4 fw-bold text-uppercase hero-text mb-2">
-            Unique
-            <p>style</p>
-          </h1>
-        </div>
-        <img
-          src="/assets/img/modelpng.png"
-          class="d-block d-lg-none mt-3 w-75"
-          alt="Model"
-        />
-        <div
-          class="position-absolute bottom-0 end-0 mb-5 me-5 d-flex justify-content-center align-items-center d-none d-md-block"
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <div class="mouse-icon">
-            <span></span>
-          </div>
-        </div>
-      </section>
-    </div>
-    <section class="container py-5 collection">
-      <h2 class="text-center text-uppercase mb-5 stretched">
-        Product catalogue
-      </h2>
+          <i class="ri-menu-line fs-3"></i>
+        </button>
 
-      <div class="row g-3 justify-content-center">
-        <div class="col-lg-8">
-          <div class="collection-box large">
-            <img src="assets/img/maletshirt.png" alt="Formal" />
-            <div class="overlay"></div>
-            <h3>Tshirts</h3>
-          </div>
-        </div>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarContent"
+        >
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex gap-4 border-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#catalogue">Product catalogue</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">On Sale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">New Arrivals</a>
+            </li>
+          </ul>
 
-        <div class="col-lg-4">
-          <div class="collection-box small">
-            <img src="assets/img/malehoodie.png" alt="Casual" />
-            <div class="overlay"></div>
-            <h3>Hoodies</h3>
-          </div>
+          <!-- <div class="navbar-icons d-flex align-items-center gap-5">
+            <i class="ri-search-line"></i>
+            <i class="ri-shopping-cart-line"></i>
+          </div> -->
         </div>
+      </div>
+    </nav>
+    <section
+      class="d-flex flex-column justify-content-center align-items-center text-center bg-light d-none d-lg-flex"
+      id="hero"
+    >
+      <img
+        src="/assets/img/modelpng.png"
+        class="position-absolute translate-middle w-50 hero-img z-4"
+        alt="Model"
+      />
+      <div class="position-relative">
+        <h1
+          class="display-1 fw-bold text-uppercase stretched hero-text d-flex justify-content-between"
+        >
+          <p>Discover</p>
+          clothes
+        </h1>
+        <h1
+          class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
+        >
+          Unique
+          <p class="mb-0 ms-auto me-5">style</p>
+        </h1>
+        <h1
+          class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
+        >
+          <p class="mb-0 ms-auto me-5">drip</p>
+        </h1>
+        <h1
+          class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
+        >
+          <p class="mb-0 ms-auto me-5">range</p>
+        </h1>
+        <h1
+          class="display-1 fw-bold text-uppercase stretched hero-text d-flex align-items-center justify-content-between"
+        >
+          <p class="mb-0 ms-auto me-1">designs</p>
+        </h1>
+        <h1
+          class="display-1 fw-bold text-uppercase stretched d-flex align-items-center"
+        >
+          <span id="counter" class="mb-0 ms-0">0</span>
+          <span id="counter" class="mb-0 ms-auto me-1">Choices</span>
+        </h1>
+      </div>
+    </section>
+    <section
+      class="d-flex flex-column justify-content-center align-items-center text-center bg-light d-block d-lg-none py-5"
+      id="hero-mobile"
+    >
+      <div class="p-4">
+        <h1 class="display-4 fw-bold text-uppercase hero-text mb-2">
+          <p>Discover</p>
+          clothes
+        </h1>
+        <h1 class="display-4 fw-bold text-uppercase hero-text mb-2">
+          Unique
+          <p>style</p>
+        </h1>
+        <h1 class="display-4 fw-bold text-uppercase hero-text mb-2">
+          New
+          <p>designs</p>
+        </h1>
+      </div>
+      <img
+        src="/assets/img/modelpng.png"
+        class="mt-3 w-75 img-fluid"
+        alt="Model"
+      />
+    </section>
+    <section
+      class="vh-100 p-5 d-flex align-items-center justify-content-center flex-column page-2 d-none d-md-flex"
+      id="catalogue"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-between g-6"
+      >
+        <h1
+          class="next-text stretched text-uppercase img-hover-effect-link"
+          data-src="/assets/img/maletshirt.png"
+        >
+          T-Shirts
+        </h1>
 
-        <div class="col-lg-4">
-          <div class="collection-box small">
-            <img src="assets/img/mug.png" alt="Gym" />
-            <div class="overlay"></div>
-            <h3>Mugs</h3>
+        <h1
+          class="next-text stretched text-uppercase img-hover-effect-link"
+          data-src="/assets/img/malehoodie.png"
+        >
+          Hoodies
+        </h1>
+
+        <h1
+          class="py-5 stretched text-uppercase d-flex align-items-center justify-content-center g-3 underline-animate"
+        >
+          Product catalogue <span>→</span> <span class="underline"></span>
+        </h1>
+
+        <h1
+          class="next-text stretched text-uppercase img-hover-effect-link"
+          data-src="/assets/img/mug.png"
+        >
+          Mugs
+        </h1>
+
+        <h1
+          class="next-text stretched text-uppercase img-hover-effect-link"
+          data-src="/assets/img/bottle.png"
+        >
+          Bottles
+        </h1>
+      </div>
+    </section>
+    <section class="page-2-mobile d-block d-md-none text-center py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-12">
+            <h2 class="text-uppercase fw-bold mb-3">Product Catalogue</h2>
           </div>
-        </div>
-
-        <div class="col-lg-8">
-          <div class="collection-box large">
-            <img src="assets/img/bottle.png" alt="Party" />
-            <div class="overlay"></div>
-            <h3>Bottles</h3>
+          <div class="col-12">
+            <h2 class="text-uppercase fw-bold mb-3">T-Shirts</h2>
+            <img
+              src="/assets/img/maletshirt.png"
+              class="img-fluid rounded"
+              alt="T-Shirts"
+            />
+          </div>
+          <div class="col-12">
+            <h2 class="text-uppercase fw-bold mb-3">Hoodies</h2>
+            <img
+              src="/assets/img/malehoodie.png"
+              class="img-fluid rounded"
+              alt="Hoodies"
+            />
+          </div>
+          <div class="col-12">
+            <h2 class="text-uppercase fw-bold mb-3">Mugs</h2>
+            <img
+              src="/assets/img/mug.png"
+              class="img-fluid rounded"
+              alt="Mugs"
+            />
+          </div>
+          <div class="col-12">
+            <h2 class="text-uppercase fw-bold mb-3">Bottles</h2>
+            <img
+              src="/assets/img/bottle.png"
+              class="img-fluid rounded"
+              alt="Bottles"
+            />
           </div>
         </div>
       </div>
     </section>
     <section
-      id="contents"
-      class="d-flex justify-content-center align-items-center overflow-hidden d-none d-md-block"
+      class="vh-100 d-flex flex-column align-items-center justify-content-center p-5"
+      id="types"
     >
-      <img src="/assets/img/femalemodel.jpg" />
-      <img src="/assets/img/malehoodie.png" />
-      <img src="/assets/img/maletshirt.png" />
+      <h1 class="stretched text-uppercase mb-4">
+        Different GSM clothing with maximum customization
+      </h1>
+    </section>
+    <section
+      class="vh-100 d-flex align-items-center justify-content-center p-5"
+      id="contact"
+    >
+      <h1 class="stretched text-uppercase">
+        Contact us on whatsapp for orders
+      </h1>
     </section>
 
+    <div class="img-wrapper">
+      <div class="img-placeholder">
+        <img src="" alt="" />
+      </div>
+    </div>
+    <div id="whatsapp-widget">
+      <div id="whatsapp-button">
+        <i class="ri-whatsapp-line"></i>
+      </div>
+
+      <div id="whatsapp-chat">
+        <div class="chat-header">
+          <span>Chat with us on WhatsApp</span>
+          <i class="ri-close-line" id="close-chat"></i>
+        </div>
+        <div class="chat-body">
+          <p>Hi there 👋<br />How can we help you today?</p>
+        </div>
+        <a
+          href="https://wa.me/9738960564?text=Hi%20PraMaan!%20I%20want%20to%20know%20more%20about%20your%20products."
+          target="_blank"
+          class="chat-send-btn"
+        >
+          <i class="ri-send-plane-fill"></i> Start Chat
+        </a>
+      </div>
+    </div>
+
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      src="/assets/js/gsap.min.js"
       integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
@@ -193,8 +282,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="script.js"></script>
   </body>
