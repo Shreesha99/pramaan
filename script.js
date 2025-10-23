@@ -1,3 +1,5 @@
+gsap.registerPlugin(Expo);
+
 const navTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
 navTl.from(".navbar .navbar-brand", {
@@ -125,8 +127,6 @@ gsap.to(".next-text", {
   },
 });
 
-gsap.registerPlugin(Expo);
-
 if (window.innerWidth >= 768) {
   const imgHoverLink = gsap.utils.toArray(".img-hover-effect-link");
   const imgWrap = document.querySelector(".img-wrapper");
@@ -183,71 +183,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-gsap.registerPlugin(Draggable, MotionPathPlugin);
-
-const gsmData = [
-  {
-    gsm: 100,
-    img: "/assets/img/malehoodie.png",
-  },
-  {
-    gsm: 200,
-    img: "/assets/img/femalemodel.jpg",
-  },
-  {
-    gsm: 300,
-    img: "/assets/img/maletshirt.png",
-  },
-];
-
-const handle = document.querySelector("#handle");
-const path = document.querySelector("#gsmPath");
-const img = document.querySelector("#gsmImage");
-const label = document.querySelector("#gsmLabel");
-
-const motion = gsap.to(handle, {
-  duration: 1,
+gsap.to("rect", {
+  motionPath: "path",
+  duration: 20,
   ease: "none",
-  motionPath: {
-    path: path,
-    align: path,
-    alignOrigin: [0.5, 0.5],
-  },
-  paused: true,
-  scrub: true,
+  repeat: -1,
 });
 
-Draggable.create(handle, {
-  type: "x,y",
-  onDrag: function () {
-    const progress = gsap.utils.clamp(
-      0,
-      1,
-      gsap.utils.mapRange(100, 700, 0, 1, this.x)
-    );
-    motion.progress(progress);
+//step 1: get DOM
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
 
-    this.addEventListener("dragend", () => snapToNearest(progress));
+let carouselDom = document.querySelector(".carousel");
+let SliderDom = carouselDom.querySelector(".carousel .list");
+let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let timeDom = document.querySelector(".carousel .time");
 
-    updateGSM(progress);
-  },
-});
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
 
-function snapToNearest(progress) {
-  const index = Math.round(progress * (gsmData.length - 1));
-  const targetProgress = index / (gsmData.length - 1);
+nextDom.onclick = function () {
+  showSlider("next");
+};
 
-  gsap.to(motion, {
-    progress: targetProgress,
-    duration: 0.3,
-    ease: "power2.out",
-    onUpdate: () => updateGSM(targetProgress),
-  });
-}
+prevDom.onclick = function () {
+  showSlider("prev");
+};
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  next.click();
+}, timeAutoNext);
+function showSlider(type) {
+  let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+  let thumbnailItemsDom = document.querySelectorAll(
+    ".carousel .thumbnail .item"
+  );
 
-function updateGSM(progress) {
-  const index = Math.round(progress * (gsmData.length - 1));
-  const current = gsmData[index];
-  img.src = current.img;
-  label.textContent = `${current.gsm} GSM`;
+  if (type === "next") {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    carouselDom.classList.add("next");
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    carouselDom.classList.add("prev");
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove("next");
+    carouselDom.classList.remove("prev");
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    next.click();
+  }, timeAutoNext);
 }
